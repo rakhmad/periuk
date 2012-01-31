@@ -1,0 +1,20 @@
+Periuk
+
+A Web application for reporting Bug and Task for a project with extremely
+cool abilities. 
+
+For ilustration:
+1. A user can report a bug through an email with certain subjects
+2. A user can report a bug through sending a direct message to periuk's 
+   twitter bot
+3. A user can upload a document through Dropbox 
+4. And many more
+
+Technologies:
+1. Django
+2. python-twitter
+3. python-markdown
+4. psycopg2
+5. Twitter bootstrap 
+6. PostgreSQL
+
