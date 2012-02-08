@@ -20,6 +20,8 @@ class MyUser(User):
 
 # Create your models here.
 class Projects(models.Model):
+  class Meta:
+    verbose_name_plural = 'Projects'
 
   ## Fields
   name = models.CharField(max_length = 200, verbose_name = u'Nama')
@@ -39,28 +41,30 @@ class Projects(models.Model):
     return self.members.all()
 
 class Tasks(models.Model):
+  class Meta:
+    verbose_name_plural = 'Tasks'
   def __unicode__(self):
-    return "[" + self.project.name + "] -> " + self.name 
+    return "[" + self.belongs_to.name + "] -> " + self.name 
 
   PRIORITIES = (
-      (u'Normal', 1),
-      (u'Immediate', 2),
-      (u'Urgent', 3),
-      (u'Critical', 4),
+      (u'Normal', u'Normal'),
+      (u'Immediate', u'Immediate'),
+      (u'Urgent', u'Urgent'),
+      (u'Critical', u'Critical'),
   )
 
   TYPES = (
-      (u'Feature', 1),
-      (u'Bug', 2),
+      (u'Feature', u'Feature'),
+      (u'Bug', u'Bug'),
   )
 
   STATUS = (
-      (u'Closed', 1),
-      (u'Open', 2),
-      (u'Resolved', 3),
-      (u'Wont Fix', 4),
-      (u'Re-open', 5),
-      (u'Duplicate', 6),
+      (u'Closed', u'Closed'),
+      (u'Open', u'Open'),
+      (u'Resolved', u'Resolved'),
+      (u'Wont Fix', u'Wont Fix'),
+      (u'Re-open', u'Re-open'),
+      (u'Duplicate', u'Duplicate'),
   )
 
   name = models.CharField(max_length = 200, verbose_name = u'Judul')
