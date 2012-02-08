@@ -1,5 +1,8 @@
 from .models import Projects, Tasks
 
+def home(request):
+  print "Hello World"
+
 def project_add(request):
 	pass
 
